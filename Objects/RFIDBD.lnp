@@ -1,0 +1,3 @@
+".\Objects\RFIDBDCode.obj" 
+TO ".\Objects\RFIDBD" 
+PRINT(".\Listings\RFIDBD.m51")

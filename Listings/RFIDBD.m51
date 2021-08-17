@@ -1,0 +1,281 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    08/17/2021  15:22:17  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\PROGRAM FILES\KEIL-V5\C51\BIN\BL51.EXE .\Objects\RFIDBDCode.obj TO .\Objects\RFIDBD PRINT (.\Listings\RFIDBD.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\RFIDBDCode.obj (RFIDBDCODE)
+  C:\PROGRAM FILES\KEIL-V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\PROGRAM FILES\KEIL-V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\PROGRAM FILES\KEIL-V5\C51\LIB\C51S.LIB (STRNCMP)
+  C:\PROGRAM FILES\KEIL-V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\RFIDBD (RFIDBDCODE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000FH     UNIT         ?DT?RFIDBDCODE
+            DATA    0017H     0008H     UNIT         _DATA_GROUP_
+            IDATA   001FH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0126H     UNIT         ?PR?MAIN?RFIDBDCODE
+            CODE    0926H     0093H     UNIT         ?CO?RFIDBDCODE
+            CODE    09B9H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0A45H     006FH     UNIT         ?PR?_STRNCMP?STRNCMP
+            CODE    0AB4H     0037H     UNIT         ?PR?_DELAY?RFIDBDCODE
+            CODE    0AEBH     0025H     UNIT         ?PR?_LCDPRINT?RFIDBDCODE
+            CODE    0B10H     0019H     UNIT         ?C?LIB_CODE
+            CODE    0B29H     0015H     UNIT         ?PR?_LCDCMD?RFIDBDCODE
+            CODE    0B3EH     0015H     UNIT         ?PR?_LCDDATA?RFIDBDCODE
+            CODE    0B53H     0014H     UNIT         ?PR?INIT?RFIDBDCODE
+            CODE    0B67H     000CH     UNIT         ?PR?UART_INIT?RFIDBDCODE
+            CODE    0B73H     000BH     UNIT         ?PR?KEYINPUT?RFIDBDCODE
+            CODE    0B7EH     000AH     UNIT         ?PR?DATEN?RFIDBDCODE
+            CODE    0B88H     0008H     UNIT         ?PR?CMDEN?RFIDBDCODE
+            CODE    0B90H     0004H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\RFIDBD (RFIDBDCODE)
+
+
+SEGMENT                            DATA_GROUP 
+  +--> CALLED SEGMENT            START    LENGTH
+------------------------------------------------
+?C_C51STARTUP                    -----    -----
+  +--> ?PR?MAIN?RFIDBDCODE
+  +--> ?C_INITSEG
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/17/2021  15:22:17  PAGE 2
+
+
+?PR?MAIN?RFIDBDCODE              -----    -----
+  +--> ?PR?UART_INIT?RFIDBDCODE
+  +--> ?PR?INIT?RFIDBDCODE
+  +--> ?CO?RFIDBDCODE
+  +--> ?PR?_LCDPRINT?RFIDBDCODE
+  +--> ?PR?_LCDCMD?RFIDBDCODE
+  +--> ?PR?_DELAY?RFIDBDCODE
+  +--> ?PR?KEYINPUT?RFIDBDCODE
+  +--> ?PR?_STRNCMP?STRNCMP
+
+?PR?INIT?RFIDBDCODE              -----    -----
+  +--> ?PR?_LCDCMD?RFIDBDCODE
+
+?PR?_LCDCMD?RFIDBDCODE           0017H    0001H
+  +--> ?PR?CMDEN?RFIDBDCODE
+
+?PR?CMDEN?RFIDBDCODE             -----    -----
+  +--> ?PR?_DELAY?RFIDBDCODE
+
+?PR?_LCDPRINT?RFIDBDCODE         0017H    0003H
+  +--> ?PR?_LCDDATA?RFIDBDCODE
+
+?PR?_LCDDATA?RFIDBDCODE          001AH    0001H
+  +--> ?PR?DATEN?RFIDBDCODE
+
+?PR?DATEN?RFIDBDCODE             -----    -----
+  +--> ?PR?_DELAY?RFIDBDCODE
+
+?PR?_STRNCMP?STRNCMP             0017H    0008H
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\RFIDBD (RFIDBDCODE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        RFIDBDCODE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0B73H         PUBLIC        keyinput
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:0B88H         PUBLIC        cmden
+  C:0B7EH         PUBLIC        daten
+  C:0ABAH         PUBLIC        _delay
+  B:0098H.0       PUBLIC        RI
+  C:0800H         PUBLIC        main
+  D:0008H         PUBLIC        rfid
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  C:0B53H         PUBLIC        init
+  D:0015H         PUBLIC        ch
+  D:008DH         PUBLIC        TH1
+  C:0B3EH         PUBLIC        _lcddata
+  B:00A0H.2       PUBLIC        en
+  C:0B67H         PUBLIC        uart_init
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/17/2021  15:22:17  PAGE 3
+
+
+  B:0088H.6       PUBLIC        TR1
+  C:0AEBH         PUBLIC        _lcdprint
+  B:0090H.3       PUBLIC        motor1
+  B:00A0H.0       PUBLIC        rs
+  B:0090H.2       PUBLIC        motor2
+  D:0016H         PUBLIC        i
+  B:00A0H.1       PUBLIC        rw
+  C:0B29H         PUBLIC        _lcdcmd
+  -------         PROC          MAIN
+  C:0800H         LINE#         28
+  C:0800H         LINE#         30
+  C:0803H         LINE#         31
+  C:0806H         LINE#         33
+  C:080FH         LINE#         34
+  C:0814H         LINE#         35
+  C:081DH         LINE#         36
+  C:0824H         LINE#         39
+  C:0824H         LINE#         41
+  C:0829H         LINE#         42
+  C:0832H         LINE#         45
+  C:0835H         LINE#         46
+  C:0849H         LINE#         48
+  C:0853H         LINE#         50
+  C:0857H         LINE#         51
+  C:085EH         LINE#         53
+  C:0863H         LINE#         54
+  C:086CH         LINE#         55
+  C:0871H         LINE#         57
+  C:0886H         LINE#         59
+  C:088FH         LINE#         61
+  C:0893H         LINE#         62
+  C:089AH         LINE#         65
+  C:08B9H         LINE#         67
+  C:08BEH         LINE#         68
+  C:08C7H         LINE#         69
+  C:08CEH         LINE#         70
+  C:08D3H         LINE#         71
+  C:08DCH         LINE#         72
+  C:08E3H         LINE#         75
+  C:08E5H         LINE#         76
+  C:08E7H         LINE#         77
+  C:08EEH         LINE#         79
+  C:08F0H         LINE#         80
+  C:08F2H         LINE#         81
+  C:08F9H         LINE#         83
+  C:08FBH         LINE#         84
+  C:08FDH         LINE#         86
+  C:0900H         LINE#         88
+  C:0900H         LINE#         90
+  C:0905H         LINE#         91
+  C:090EH         LINE#         92
+  C:0913H         LINE#         93
+  C:091CH         LINE#         94
+  C:0923H         LINE#         96
+  C:0923H         LINE#         97
+  -------         ENDPROC       MAIN
+  -------         PROC          KEYINPUT
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/17/2021  15:22:17  PAGE 4
+
+
+  C:0B73H         LINE#         100
+  C:0B73H         LINE#         103
+  C:0B76H         LINE#         104
+  C:0B79H         LINE#         105
+  C:0B7BH         LINE#         106
+  C:0B7DH         LINE#         108
+  -------         ENDPROC       KEYINPUT
+  -------         PROC          L?0036
+  -------         ENDPROC       L?0036
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        dtime
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0ABAH         LINE#         110
+  C:0ABAH         LINE#         114
+  C:0AC5H         LINE#         116
+  C:0AD4H         LINE#         117
+  C:0AE3H         LINE#         119
+  C:0AEAH         LINE#         120
+  -------         ENDPROC       _DELAY
+  -------         PROC          _LCDCMD
+  D:0017H         SYMBOL        ch
+  C:0B29H         LINE#         122
+  C:0B2BH         LINE#         124
+  C:0B31H         LINE#         125
+  C:0B34H         LINE#         126
+  C:0B3BH         LINE#         127
+  -------         ENDPROC       _LCDCMD
+  -------         PROC          _LCDDATA
+  D:001AH         SYMBOL        ch
+  C:0B3EH         LINE#         131
+  C:0B40H         LINE#         133
+  C:0B46H         LINE#         134
+  C:0B49H         LINE#         135
+  C:0B50H         LINE#         136
+  -------         ENDPROC       _LCDDATA
+  -------         PROC          _LCDPRINT
+  D:0017H         SYMBOL        str
+  C:0AEBH         LINE#         140
+  C:0AF1H         LINE#         143
+  C:0AFCH         LINE#         145
+  C:0B0DH         LINE#         147
+  C:0B0FH         LINE#         148
+  -------         ENDPROC       _LCDPRINT
+  -------         PROC          DATEN
+  C:0B7EH         LINE#         150
+  C:0B7EH         LINE#         153
+  C:0B80H         LINE#         154
+  C:0B82H         LINE#         155
+  C:0B82H         LINE#         156
+  C:0B85H         LINE#         157
+  C:0B87H         LINE#         159
+  -------         ENDPROC       DATEN
+  -------         PROC          CMDEN
+  C:0B88H         LINE#         161
+  C:0B88H         LINE#         163
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/17/2021  15:22:17  PAGE 5
+
+
+  C:0B8AH         LINE#         164
+  C:0B8AH         LINE#         165
+  C:0B8DH         LINE#         166
+  C:0B8FH         LINE#         168
+  -------         ENDPROC       CMDEN
+  -------         PROC          INIT
+  C:0B53H         LINE#         170
+  C:0B53H         LINE#         172
+  C:0B58H         LINE#         173
+  C:0B5DH         LINE#         174
+  C:0B62H         LINE#         175
+  -------         ENDPROC       INIT
+  -------         PROC          UART_INIT
+  C:0B67H         LINE#         179
+  C:0B67H         LINE#         181
+  C:0B6AH         LINE#         182
+  C:0B6DH         LINE#         183
+  C:0B70H         LINE#         184
+  C:0B72H         LINE#         186
+  -------         ENDPROC       UART_INIT
+  -------         ENDMOD        RFIDBDCODE
+
+  -------         MODULE        ?C?CLDPTR
+  C:0B10H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        STRNCMP
+  D:0017H         PUBLIC        ?_strncmp?BYTE
+  C:0A45H         PUBLIC        _strncmp
+  -------         ENDMOD        STRNCMP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 027FH BYTE (31%) *
+******************************************************************************
+
+Program Size: data=32.0 xdata=0 code=919
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
