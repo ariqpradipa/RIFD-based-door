@@ -72,23 +72,23 @@ void main() {
             delay(200);
             
             // spin the motor to unlock the door
-            motor1=1;
-            motor2=0;
+            motor1 = 1;
+            motor2 = 0;
             delay(500);
 
-            motor1=0;
-            motor2=1;
+            motor1 = 0;
+            motor2 = 1;
             delay(400);
 
-            motor1=0;
-            motor2=0;
+            motor1 = 0;
+            motor2 = 0;
 
         }
         // if the card not exist
         else {
 
            lcdcmd(1);
-           lcdprint("Card don't exist");
+           lcdprint("CardNotRegistered!");
            lcdcmd(0xc0);
            lcdprint("Try Another Card");
            delay(300);
@@ -170,9 +170,9 @@ void cmden() {
 void init() {
 
     lcdcmd(0x02);
-    lcdcmd(0x28);
-    lcdcmd(0x0E);
-    lcdcmd(0x01);
+    lcdcmd(0x28);   // 4-bit mode, 2 line, 4x7 dots
+    lcdcmd(0x0E);   // display on cursor ON
+    lcdcmd(0x01);   // clear display
 
 }
 
